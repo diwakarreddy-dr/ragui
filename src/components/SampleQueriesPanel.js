@@ -14,24 +14,21 @@ const SampleQueriesPanel = ({ onQuerySelect, isLoading }) => {
             key={item.id}
             className={`query-item ${isLoading ? 'processing' : ''}`}
             onClick={() => !isLoading && onQuerySelect(item.query)}
-            onMouseEnter={() => setHoveredQuery(item.query)}
+            onMouseEnter={() => setHoveredQuery(item.id)}
             onMouseLeave={() => setHoveredQuery(null)}
           >
             <h4>{item.title}</h4>
             <p className="description">{item.description}</p>
             
-            {hoveredQuery === item.query && (
-              <div className="query-tooltip">
-                <div className="tooltip-content">
-                  <h4>{item.title}</h4>
-                  <p>{item.query}</p>
-                  {isLoading && (
-                    <div className="tooltip-loading">
-                      <div className="spinner"></div>
-                      <span>Processing...</span>
-                    </div>
-                  )}
-                </div>
+            {hoveredQuery === item.id && (
+              <div className="query-details">
+                <pre className="query-preview">{item.query}</pre>
+                {isLoading && (
+                  <div className="tooltip-loading">
+                    <div className="spinner"></div>
+                    <span>Processing...</span>
+                  </div>
+                )}
               </div>
             )}
           </li>
