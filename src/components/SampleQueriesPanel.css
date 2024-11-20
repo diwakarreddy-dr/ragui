@@ -1,0 +1,91 @@
+.sample-queries-panel {
+  padding: 20px;
+}
+
+.query-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.query-item {
+  position: relative;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.query-item:hover {
+  border-color: #1a73e8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.query-item h4 {
+  margin: 0 0 0.5rem 0;
+  color: #1a73e8;
+  font-size: 0.95rem;
+}
+
+.query-item .description {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.query-tooltip {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-left: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  z-index: 1000;
+  width: 300px;
+}
+
+.tooltip-content {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.tooltip-content h4 {
+  margin: 0 0 10px 0;
+  color: #1a73e8;
+}
+
+.tooltip-content p {
+  margin: 0;
+  color: #333;
+}
+
+.tooltip-loading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #1a73e8;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+} 

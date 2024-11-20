@@ -18,3 +18,83 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Add these styles for the sample queries section */
+.sample-queries {
+    padding: 10px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.query-item {
+    padding: 10px;
+    margin: 8px 0;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    cursor: pointer;
+    border-left: 3px solid #007bff;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.query-item:hover {
+    background-color: #e9ecef;
+    transform: translateX(5px);
+}
+
+/* Tooltip styling */
+.query-item::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    background-color: #333;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: normal;
+    width: 200px;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.query-item:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+.query-category {
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 15px 0 10px 0;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #007bff;
+}
+
+/* Scrollbar styling for sample queries */
+.sample-queries::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sample-queries::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.sample-queries::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.sample-queries::-webkit-scrollbar-thumb:hover {
+    background: #707070;
+}
